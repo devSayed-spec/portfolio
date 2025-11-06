@@ -1,6 +1,6 @@
-// ===================================
+
 // 1. GREETING FUNCTION
-// ===================================
+
 function displayGreeting() {
     const userName = "Sayed Furqan";
     const greetingElement = document.getElementById('greeting');
@@ -10,9 +10,8 @@ function displayGreeting() {
     }
 }
 
-// ===================================
 // 2. HAMBURGER MENU (RESPONSIVE)
-// ===================================
+
 function setupHamburgerMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
