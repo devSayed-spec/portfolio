@@ -31,135 +31,7 @@ function setupHamburgerMenu() {
     }
 }
 
-// ===================================
-// 3. FORM VALIDATION & SUBMISSION
-// ===================================
-function setupFormValidation() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const contactType = document.getElementById('contactType').value;
-            const contactValue = document.getElementById('contactValue').value;
-            const gender = document.querySelector('input[name="gender"]:checked');
-            const message = document.getElementById('message').value;
-            
-            // Validation
-            let isValid = true;
-            let errorMessage = "";
-            
-            // Validate Name
-            if (name.trim() === "") {
-                isValid = false;
-                errorMessage += "❌ Nama tidak boleh kosong!\n";
-            }
-            
-            // Validate Contact Value
-            if (contactValue.trim() === "") {
-                isValid = false;
-                errorMessage += "❌ Nomor/Email tidak boleh kosong!\n";
-            } else {
-                // Validate Email format
-                if (contactType === "Email") {
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailPattern.test(contactValue)) {
-                        isValid = false;
-                        errorMessage += "❌ Format email tidak valid!\n";
-                    }
-                }
-                // Validate Phone format
-                if (contactType === "Telepon") {
-                    const phonePattern = /^[0-9]+$/;
-                    if (!phonePattern.test(contactValue)) {
-                        isValid = false;
-                        errorMessage += "❌ Nomor telepon hanya boleh berisi angka!\n";
-                    }
-                    if (contactValue.length < 10) {
-                        isValid = false;
-                        errorMessage += "❌ Nomor telepon minimal 10 digit!\n";
-                    }
-                }
-            }
-            
-            // Validate Gender
-            if (!gender) {
-                isValid = false;
-                errorMessage += "❌ Pilih jenis kelamin!\n";
-            }
-            
-            // Validate Message
-            if (message.trim() === "") {
-                isValid = false;
-                errorMessage += "❌ Pesan tidak boleh kosong!\n";
-            }
-            
-            // If validation fails
-            if (!isValid) {
-                alert(errorMessage);
-                return;
-            }
-            
-            // If validation passes
-            displayResult({
-                name: name,
-                contactType: contactType,
-                contactValue: contactValue,
-                gender: gender.value,
-                message: message
-            });
-        });
-    }
-}
-
-// ===================================
-// 4. DISPLAY RESULT FUNCTION
-// ===================================
-function displayResult(data) {
-    // Get current time
-    const now = new Date();
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        timeZone: 'Asia/Jakarta'
-    };
-    const currentTime = now.toLocaleString('id-ID', options);
-    
-    // Format result HTML
-    const resultHTML = `
-        <h3>✅ Form Submitted Successfully!</h3>
-        <p><strong>Current time:</strong> ${currentTime}</p>
-        <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
-        <p><strong>Nama:</strong> ${data.name}</p>
-        <p><strong>${data.contactType}:</strong> ${data.contactValue}</p>
-        <p><strong>Jenis Kelamin:</strong> ${data.gender}</p>
-        <p><strong>Pesan:</strong></p>
-        <p style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; margin-top: 10px;">${data.message}</p>
-    `;
-    
-    // Display result
-    const formResult = document.getElementById('formResult');
-    if (formResult) {
-        formResult.innerHTML = resultHTML;
-    }
-    
-    // Reset form
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.reset();
-    }
-    
-    // Show success message
-    alert('✅ Form berhasil dikirim!');
-}
+// (form handling removed - not used in this portfolio)
 
 // ===================================
 // 5. SMOOTH SCROLL FOR ANCHOR LINKS
@@ -239,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run all initialization functions
     displayGreeting();
     setupHamburgerMenu();
-    setupFormValidation();
     setupSmoothScroll();
     setupImageLightbox();
     
