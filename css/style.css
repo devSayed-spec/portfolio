@@ -161,6 +161,64 @@ body {
 }
 
 /* ===================================
+   CV DOWNLOAD BUTTONS
+   =================================== */
+
+/* Hero Buttons Container */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Button Base Styles */
+.btn-primary, 
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+/* Primary Button (Download CV) */
+.btn-primary {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+/* Secondary Button (Lihat CV) */
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid #2563eb;
+}
+
+.btn-secondary:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* SVG Icon Styles */
+.btn-primary svg,
+.btn-secondary svg {
+    flex-shrink: 0;
+}
+
+/* ===================================
    PROJECTS SECTION
    =================================== */
 .projects {
@@ -280,7 +338,7 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     margin-top: 60px;
 }
@@ -520,6 +578,18 @@ body {
         display: none;
     }
 
+    /* CV Buttons Responsive */
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-primary, 
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
     .project-item {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -573,5 +643,12 @@ body {
         top: 15px;
         right: 25px;
         font-size: 30px;
+    }
+
+    /* CV Buttons Mobile Small */
+    .btn-primary, 
+    .btn-secondary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
