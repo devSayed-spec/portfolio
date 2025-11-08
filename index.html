@@ -8,44 +8,110 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
-                    <text x="20" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="currentColor">SF</text>
-                </svg>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-            <div class="social-links">
-                <a href="https://github.com/devSayed-spec" target="_blank" aria-label="GitHub">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+<body data-theme="dark">
+    <!-- Desktop Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-top">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                        <text x="20" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="currentColor">SF</text>
                     </svg>
-                </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="theme-icon mono-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="9" y1="9" x2="15" y2="9"></line>
+                    <line x1="9" y1="15" x2="15" y2="15"></line>
+                </svg>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="logo">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                <text x="20" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="currentColor">SF</text>
+            </svg>
+        </div>
+        <div class="mobile-actions">
+            <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="theme-icon mono-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="9" y1="9" x2="15" y2="9"></line>
+                    <line x1="9" y1="15" x2="15" y2="15"></line>
+                </svg>
+            </button>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Glitch Overlay -->
+    <div class="glitch-overlay" id="glitchOverlay"></div>
+
+    <!-- Monospaced Background Animation -->
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Halo, saya Sayed Furqan, selamat datang di portfolio saya.</h1>
+                <h1 class="hero-title">Halo, saya Sayed Furqan, selamat datang di portfolio saya.</h1>
                 <p class="hero-subtitle">Fresh Graduate Diploma 4 Teknologi Rekayasa Komputer Jaringan</p>
                 
-                <!-- CV Download Buttons -->
                 <div class="hero-buttons">
                     <a href="files/CV 2.0.pdf" download="CV_Sayed_Furqan.pdf" class="btn-primary">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -64,207 +130,144 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-decoration">
-                <div class="circle-outline"></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2 class="section-title">Selected Projects</h2>
             
-            <!-- Project 1 -->
-            <article class="project-item">
-                <div class="project-number">01</div>
-                <div class="project-content">
-                    <h3>Formulir Pendaftaran Workshop Teknologi</h3>
-                    <p>Proyek formulir pendaftaran workshop yang saya buat untuk menyelesaikan sertifikasi freeCodeCamp. Dalam proyek ini saya belajar membuat berbagai jenis input form, validasi, dan struktur HTML semantik yang baik.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <article class="project-item" data-project="1">
+                    <div class="project-header">
+                        <h3 class="project-title">Formulir Pendaftaran Workshop Teknologi</h3>
+                        <div class="project-meta">
+                            <span class="project-year">2025</span>
+                            <span class="project-role">Web Development</span>
+                        </div>
                     </div>
-                </div>
-                <div class="project-image">
-                    <img src="images/form-workshop.png" 
-                         alt="Formulir Workshop" 
-                         class="clickable-image"
-                         data-title="Formulir Pendaftaran Workshop Teknologi"
-                         loading="lazy">
-                </div>
-            </article>
+                </article>
 
-            <!-- Project 2 -->
-            <article class="project-item">
-                <div class="project-number">02</div>
-                <div class="project-content">
-                    <h3>IoT Smart Locker</h3>
-                    <p>Sistem Smart Locker berbasis IoT dengan autentikasi sidik jari dan integrasi Firebase & MQTT. Sistem ini dikembangkan sebagai bagian dari proyek akhir saya dengan fitur keamanan tinggi dan monitoring real-time.</p>
-                    <div class="project-tags">
-                        <span>IoT</span>
-                        <span>MQTT</span>
-                        <span>Firebase</span>
-                        <span>Hardware Integration</span>
+                <!-- Project 2 -->
+                <article class="project-item" data-project="2">
+                    <div class="project-header">
+                        <h3 class="project-title">IoT Smart Locker</h3>
+                        <div class="project-meta">
+                            <span class="project-year">2025</span>
+                            <span class="project-role">IoT / Hardware</span>
+                        </div>
                     </div>
-                </div>
-                <div class="project-images-dual">
-                    <img src="images/tampak-depan.jpg" 
-                         alt="Smart Locker - Front View" 
-                         class="clickable-image"
-                         data-title="IoT Smart Locker - Tampak Depan"
-                         loading="lazy">
-                    <img src="images/tampak-belakang.jpg" 
-                         alt="Smart Locker - Back View" 
-                         class="clickable-image"
-                         data-title="IoT Smart Locker - Tampak Belakang"
-                         loading="lazy">
-                </div>
-            </article>
+                </article>
 
-            <!-- Project 3 -->
-            <article class="project-item">
-                <div class="project-number">03</div>
-                <div class="project-content">
-                    <h3>Halaman Penghormatan Dr. B.J. Habibie</h3>
-                    <p>Tribute page responsif untuk Dr. B.J. Habibie menggunakan HTML5 dan CSS3. Proyek ini mengimplementasikan semantic HTML, responsive images, dan mobile-first design sebagai bagian dari sertifikasi Responsive Web Design freeCodeCamp.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
+                <!-- Project 3 -->
+                <article class="project-item" data-project="3">
+                    <div class="project-header">
+                        <h3 class="project-title">Halaman Penghormatan Dr. B.J. Habibie</h3>
+                        <div class="project-meta">
+                            <span class="project-year">2025</span>
+                            <span class="project-role">Web Design</span>
+                        </div>
                     </div>
-                </div>
-                <div class="project-image">
-                    <img src="images/penghormatan.png" 
-                         alt="Tribute Page" 
-                         class="clickable-image"
-                         data-title="Halaman Penghormatan Dr. B.J. Habibie"
-                         loading="lazy">
-                </div>
-            </article>
+                </article>
 
-            <!-- Project 4 -->
-            <article class="project-item">
-                <div class="project-number">04</div>
-                <div class="project-content">
-                    <h3>Mobile IoT Smart Locker</h3>
-                    <p>Aplikasi mobile untuk mengontrol Smart Locker berbasis IoT yang saya buat menggunakan bahasa Dart. Aplikasi ini dibuat sebagai bagian dari proyek akhir saya dengan interface yang intuitif dan user-friendly.</p>
-                    <div class="project-tags">
-                        <span>Dart</span>
-                        <span>Flutter</span>
-                        <span>Mobile Development</span>
+                <!-- Project 4 -->
+                <article class="project-item" data-project="4">
+                    <div class="project-header">
+                        <h3 class="project-title">Mobile IoT Smart Locker</h3>
+                        <div class="project-meta">
+                            <span class="project-year">2025</span>
+                            <span class="project-role">Mobile Dev</span>
+                        </div>
                     </div>
-                </div>
-                <div class="project-image">
-                    <img src="images/mobile.jpg" 
-                         alt="Mobile App" 
-                         class="clickable-image"
-                         data-title="Mobile IoT Smart Locker"
-                         loading="lazy">
-                </div>
-            </article>
-        </div>
-    </section>
+                </article>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Tentang saya</h2>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2 class="section-title">Tentang Saya</h2>
             <div class="about-content">
                 <div class="about-text">
-                <p>Halo! Saya <strong>Sayed Furqan</strong>, Fresh Graduate Diploma 4 Teknologi Rekayasa Komputer Jaringan dengan IPK 3.33. Memiliki pengalaman hands-on mengembangkan sistem IoT terintegrasi menggunakan protokol MQTT dan aplikasi mobile berbasis Flutter.</p>
-                <p>Saat ini aktif memperdalam kemampuan di bidang <strong>Front-End Web Development</strong> dengan fokus pada HTML, CSS, dan JavaScript melalui pembelajaran di freeCodeCamp. Sedang mempelajari <strong>TypeScript dan Java</strong> untuk memperluas kemampuan dalam pengembangan software.</p>
-                <p>Memiliki <strong>strong problem-solving skills</strong> yang terbukti dalam proyek IoT Smart Locker dengan integrasi hardware-software kompleks. Familiar dengan <strong>Agile methodology</strong> dan tools seperti Figma untuk UI/UX design. Antusias untuk terus belajar teknologi web modern seperti React dan framework lainnya.</p>
-                <p>Saya adalah individu yang <strong>proaktif, quick learner, dan mudah beradaptasi</strong>. Siap berkontribusi dalam tim pengembangan software untuk menciptakan solusi digital yang inovatif dan berdampak.</p>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Web Development (LEVEL-BASIC)</h4>
-                            <ul>
-                                <li>HTML5 & CSS3</li>
-                                <li>JavaScript</li>
-                                <li>Responsive Design</li>
-                                <li>Learning: TypeScript</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4>Mobile Development (LEVEL-BASIC)</h4>
-                            <ul>
-                                <li>Dart/Flutter</li>
-                                <li>Cross-platform Apps</li>
-                                <li>UI/UX Design (Figma)</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4>Backend & IoT (LEVEL-BASIC)</h4>
-                            <ul>
-                                <li>Python</li>
-                                <li>Learning: Java</li>
-                                <li>IoT & MQTT Protocol</li>
-                                <li>Firebase Integration</li>
-                                <li>ESP32/Arduino</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4>Tools & Methodology</h4>
-                            <ul>
-                                <li>Git & GitHub</li>
-                                <li>VS Code, PyCharm</li>
-                                <li>Arduino IDE</li>
-                                <li>Figma (Design Tool)</li>
-                                <li>Agile (Familiar)</li>
-                                <li>Learning: Jira</li>
-                            </ul>
+                    <p>Halo! Saya <strong>Sayed Furqan</strong>, Fresh Graduate Diploma 4 Teknologi Rekayasa Komputer Jaringan dengan IPK 3.33. Memiliki pengalaman hands-on mengembangkan sistem IoT terintegrasi menggunakan protokol MQTT dan aplikasi mobile berbasis Flutter.</p>
+                    <p>Saat ini aktif memperdalam kemampuan di bidang <strong>Front-End Web Development</strong> dengan fokus pada HTML, CSS, dan JavaScript melalui pembelajaran di freeCodeCamp. Sedang mempelajari <strong>TypeScript dan Java</strong> untuk memperluas kemampuan dalam pengembangan software.</p>
+                    <p>Memiliki <strong>strong problem-solving skills</strong> yang terbukti dalam proyek IoT Smart Locker dengan integrasi hardware-software kompleks. Familiar dengan <strong>Agile methodology</strong> dan tools seperti Figma untuk UI/UX design. Antusias untuk terus belajar teknologi web modern seperti React dan framework lainnya.</p>
+                    <p>Saya adalah individu yang <strong>proaktif, quick learner, dan mudah beradaptasi</strong>. Siap berkontribusi dalam tim pengembangan software untuk menciptakan solusi digital yang inovatif dan berdampak.</p>
+                    
+                    <div class="skills-section">
+                        <h3>Skills & Technologies</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">HTML5 & CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Dart/Flutter</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">IoT & MQTT</span>
+                            <span class="skill-tag">Firebase</span>
+                            <span class="skill-tag">ESP32/Arduino</span>
+                            <span class="skill-tag">Git & GitHub</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Agile</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
                     <img src="images/profile.jpg" 
-                         alt="Sayed Furqan"
-                         class="clickable-image"
-                         data-title="Sayed Furqan - Profile Photo"
+                         alt="Sayed Furqan - Profile Photo"
                          loading="lazy">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Silakan hubungi saya</h2>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <p class="contact-intro">Saat ini saya sedang mencari kesempatan baru untuk belajar dan berkembang. Kalau ada hal yang ingin dibicarakan atau sekadar menyapa, jangan ragu untuk menghubungi saya!</p>
-                <div class="contact-info">
+                
+                <div class="contact-links">
                     <a href="mailto:sayedfurqan10@gmail.com" class="contact-link">
-                        <span class="contact-icon">📧</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
                         sayedfurqan10@gmail.com
                     </a>
-                    <a href="tel:+6282162735142" class="contact-link">
-                        <span class="contact-icon">📱</span>
-                        +62 821 6273 5142
-                    </a>
+                    
                     <a href="https://github.com/devSayed-spec" target="_blank" class="contact-link">
-                        <span class="contact-icon">💻</span>
-                        github.com/devSayed-spec
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    
+                    <a href="tel:+6282162735142" class="contact-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        +62 821 6273 5142
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Image Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt="Preview">
-        <div id="lightbox-caption"></div>
+    <!-- Project Detail Modal -->
+    <div class="project-modal" id="projectModal">
+        <button class="modal-close" id="modalClose">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="modal-content" id="modalContent">
+            <!-- Content will be injected by JavaScript -->
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>© 2025 Sayed Furqan. Dirancang dan dibangun dengan penuh semangat.</p>
-        </div>
+        <p>© 2025 Sayed Furqan. Dirancang dan dibangun dengan penuh semangat.</p>
     </footer>
 
     <script src="js/script.js"></script>
