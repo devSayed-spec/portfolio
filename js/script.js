@@ -5,11 +5,11 @@ const projectsData = {
     1: {
         title: "Formulir Pendaftaran Workshop Teknologi",
         year: "2025",
-        role: "Web Development",
-        description: "Proyek formulir pendaftaran workshop yang saya buat untuk menyelesaikan sertifikasi freeCodeCamp. Dalam proyek ini saya belajar membuat berbagai jenis input form, validasi, dan struktur HTML semantik yang baik.",
-        tags: ["HTML5", "CSS3", "Form Validation"],
-        images: ["images/form-workshop.png"],
-        liveUrl: "https://devsayed-spec.github.io/survey-form/"
+        role: "Front-End Web Development",
+        description: "Sebuah proyek formulir pendaftaran workshop teknologi yang dibuat untuk menyelesaikan tantangan sertifikasi freeCodeCamp. Proyek ini membantu saya memahami struktur HTML semantik, berbagai tipe input form, serta dasar-dasar validasi dan styling menggunakan CSS.",
+        tags: ["HTML5", "CSS3", "Form Validation", "Responsive Design"],
+        images: ["images/form-pendaftaran.png"],
+        liveUrl: "https://devsayed-spec.github.io/Formulir-Pendaftaran-FreeCodeCamp/"
     },
     2: {
         title: "IoT Smart Locker",
@@ -24,7 +24,7 @@ const projectsData = {
         title: "Halaman Penghormatan Dr. B.J. Habibie",
         year: "2025",
         role: "Web Design",
-        description: "Tribute page responsif untuk Dr. B.J. Habibie menggunakan HTML5 dan CSS3. Proyek ini mengimplementasikan semantic HTML, responsive images, dan mobile-first design sebagai bagian dari sertifikasi Responsive Web Design freeCodeCamp.",
+        description: "Tribute page responsif untuk Dr. B.J. Habibie menggunakan HTML5 dan CSS3. Proyek ini mengimplementasikan semantic HTML, responsive images, dan responsive design sebagai bagian dari sertifikasi Responsive Web Design freeCodeCamp.",
         tags: ["HTML5", "CSS3", "Responsive Design"],
         images: ["images/penghormatan.png"],
         liveUrl: "https://devsayed-spec.github.io/tribute-page/"
@@ -36,8 +36,19 @@ const projectsData = {
         description: "Aplikasi mobile untuk mengontrol Smart Locker berbasis IoT yang saya buat menggunakan bahasa Dart. Aplikasi ini dibuat sebagai bagian dari proyek akhir saya dengan interface yang intuitif dan user-friendly.",
         tags: ["Dart", "Flutter", "Mobile Development", "IoT Integration"],
         images: ["images/mobile.jpg"],
-        liveUrl: "URL_MOBILE_PROJECT_ANDA"
+        liveUrl: "https://devsayed-spec.github.io/project-tugas-akhir/"
+    },
+    5: {
+        title: "TechVision - Company Profile Website",
+        year: "2025",
+        role: "Frontend Web Development",
+        description: "Website profil perusahaan interaktif dengan dua halaman (Beranda & Profil). Fitur meliputi sistem greeting dinamis untuk user, contact form dengan validasi (nama, format email, panjang pesan), responsive hamburger menu untuk perangkat mobile, gradient hero section, serta struktur konten yang menampilkan visi, misi, dan nilai perusahaan. Fully responsive untuk desktop, tablet, dan mobile.",
+        tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Form Validation", "DOM Manipulation"],
+        images: [],
+        liveUrl: "https://devsayed-spec.github.io/CodingCamp-3Nov25-sayed/"
     }
+    
+
 };
 
 // ===========================
