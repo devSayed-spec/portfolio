@@ -52,9 +52,20 @@
             </svg>
         </div>
         <div class="mobile-actions">
-            <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
-                <span class="theme-text">DARK</span>
-            </button>
+            <div class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
+                <button class="theme-option" data-theme="light">
+                    <span class="theme-checkbox"></span>
+                    <span class="theme-label">L</span>
+                </button>
+                <button class="theme-option" data-theme="dark">
+                    <span class="theme-checkbox"></span>
+                    <span class="theme-label">D</span>
+                </button>
+                <button class="theme-option" data-theme="mono">
+                    <span class="theme-checkbox"></span>
+                    <span class="theme-label">M</span>
+                </button>
+            </div>
             <button class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -76,16 +87,13 @@
     <!-- Glitch Overlay -->
     <div class="glitch-overlay" id="glitchOverlay"></div>
 
-    <!-- Monospaced Background Animation -->
-    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
-
     <!-- Main Content -->
     <main class="main-content">
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">Halo, saya Sayed Furqan, selamat datang di portfolio saya.</h1>
-                <p class="hero-subtitle">Fresh Graduate Diploma 4 Teknologi Rekayasa Komputer Jaringan</p>
+                <p class="hero-subtitle">Aspiring Front-End Developer | Fresh Graduate D4 Teknologi Rekayasa Komputer Jaringan</p>
                 
                 <div class="hero-buttons">
                     <a href="files/CV 2.0.pdf" download="CV_Sayed_Furqan.pdf" class="btn-primary">
@@ -217,7 +225,6 @@
                 </article>
             </div>
         </section>
-
 
         <!-- About Section -->
         <section id="about" class="about">
