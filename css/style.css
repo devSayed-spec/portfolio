@@ -1,36 +1,33 @@
 /* ===========================
-    CSS Variables & Reset
-    =========================== */
+   CSS Variables & Reset
+   =========================== */
 :root {
-    --bg-primary: #000000;
-    --bg-secondary: #1a1a1a;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
     --text-primary: #ffffff;
-    --text-secondary: #cccccc;
-    --border-color: #333333;
+    --text-secondary: #888888;
+    --border-color: #1a1a1a;
     --accent-color: #ffffff;
-    --hover-bg: #222222;
-    --halftone-size: 10px; 
-    --halftone-color: rgba(255, 255, 255, 0.2); 
-    --image-url: url('assets/bg-abstract-mono.jpg'); 
+    --hover-bg: #151515;
 }
 
-[data-theme="alternate"] {
-    --bg-primary: #1e2a44;
-    --bg-secondary: #2e405e;
-    --text-primary: #ffffff;
-    --text-secondary: #d3d9e0;
-    --border-color: #4a6580;
-    --accent-color: #ffffff;
-    --hover-bg: #3a5070;
-    /* Tema Biru (Sesuai Gambar 1) */
-    --halftone-color: rgba(255, 255, 255, 0.1); 
-    --image-url: url('images/tema.2.jpg'); 
+[data-theme="light"] {
+    --bg-primary: #e8e8e8;
+    --bg-secondary: #f5f5f5;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --border-color: #d0d0d0;
+    --accent-color: #000000;
+    --hover-bg: #dedede;
 }
 
-[data-theme="default"] {
-    /* Tema Monokrom (Sesuai Gambar 2) */
-    --halftone-color: rgba(255, 255, 255, 0.2); 
-    --image-url: url('images/tema.1.jpg'); 
+body.mono-active {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.05em;
+}
+
+body.mono-active * {
+    font-family: 'Courier New', Courier, monospace !important;
 }
 
 * {
@@ -43,7 +40,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* MODIFIKASI BACKGROUND PENTING ADA DI SINI */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     background-color: var(--bg-primary);
@@ -51,34 +47,12 @@ body {
     line-height: 1.6;
     font-weight: 300;
     letter-spacing: 0.02em;
-    
-    /* LAPISAN BACKGROUND: Halftone di atas Gambar Abstrak */
-    background-image: 
-        /* Lapisan 1: Halftone Dots (radial-gradient) */
-        radial-gradient(circle at 50% 50%, var(--halftone-color) 1px, transparent 1px),
-        /* Lapisan 2: Gambar Abstrak (gelombang) */
-        var(--image-url);
-        
-    /* Pengaturan Ukuran dan Penempatan */
-    background-size: 
-        var(--halftone-size) var(--halftone-size), /* Ukuran untuk Halftone */
-        cover; /* Ukuran untuk Gambar */
-        
-    /* Menggabungkan Halftone dengan Gambar */
-    background-blend-mode: overlay, normal; 
-    
-    /* Agar gambar menempel dan mengisi seluruh viewport */
-    background-attachment: fixed;
-    background-position: center center;
-
-    transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* AKHIR MODIFIKASI BACKGROUND */
-
 
 /* ===========================
-    Glitch Effect
-    =========================== */
+   Glitch Effect
+   =========================== */
 .glitch-overlay {
     position: fixed;
     inset: 0;
@@ -104,8 +78,8 @@ body {
 }
 
 /* ===========================
-    Sidebar Navigation
-    =========================== */
+   Sidebar Navigation
+   =========================== */
 .sidebar {
     position: fixed;
     left: 0;
@@ -247,8 +221,8 @@ body {
 }
 
 /* ===========================
-    Mobile Header & Menu
-    =========================== */
+   Mobile Header & Menu
+   =========================== */
 .mobile-header {
     display: none;
     position: fixed;
@@ -375,8 +349,8 @@ body {
 }
 
 /* ===========================
-    Main Content
-    =========================== */
+   Main Content
+   =========================== */
 .main-content {
     margin-left: 200px;
     transition: margin-left 0.3s ease;
@@ -385,8 +359,8 @@ body {
 }
 
 /* ===========================
-    Hero Section
-    =========================== */
+   Hero Section
+   =========================== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -449,8 +423,8 @@ body {
 }
 
 /* ===========================
-    Projects Section
-    =========================== */
+   Projects Section
+   =========================== */
 .projects {
     min-height: 100vh;
     padding: 6rem 2rem;
@@ -540,8 +514,8 @@ body {
 }
 
 /* ===========================
-    About Section
-    =========================== */
+   About Section
+   =========================== */
 .about {
     min-height: 100vh;
     padding: 6rem 2rem;
@@ -621,8 +595,8 @@ body {
 }
 
 /* ===========================
-    Contact Section
-    =========================== */
+   Contact Section
+   =========================== */
 .contact {
     min-height: 100vh;
     padding: 6rem 2rem;
@@ -674,8 +648,8 @@ body {
 }
 
 /* ===========================
-    Project Modal
-    =========================== */
+   Project Modal
+   =========================== */
 .project-modal {
     position: fixed;
     inset: 0;
@@ -779,8 +753,8 @@ body {
 }
 
 /* ===========================
-    Footer
-    =========================== */
+   Footer
+   =========================== */
 .footer {
     padding: 3rem 2rem;
     border-top: 1px solid var(--border-color);
@@ -791,8 +765,8 @@ body {
 }
 
 /* ===========================
-    Responsive Design
-    =========================== */
+   Responsive Design
+   =========================== */
 @media (max-width: 1024px) {
     .about-content {
         grid-template-columns: 1fr;
