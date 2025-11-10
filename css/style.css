@@ -1,33 +1,36 @@
 /* ===========================
-   CSS Variables & Reset
-   =========================== */
+    CSS Variables & Reset
+    =========================== */
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
     --text-primary: #ffffff;
-    --text-secondary: #888888;
-    --border-color: #1a1a1a;
+    --text-secondary: #cccccc;
+    --border-color: #333333;
     --accent-color: #ffffff;
-    --hover-bg: #151515;
+    --hover-bg: #222222;
+    --halftone-size: 10px; 
+    --halftone-color: rgba(255, 255, 255, 0.2); 
+    --image-url: url('assets/bg-abstract-mono.jpg'); 
 }
 
-[data-theme="light"] {
-    --bg-primary: #e8e8e8;
-    --bg-secondary: #f5f5f5;
-    --text-primary: #000000;
-    --text-secondary: #666666;
-    --border-color: #d0d0d0;
-    --accent-color: #000000;
-    --hover-bg: #dedede;
+[data-theme="alternate"] {
+    --bg-primary: #1e2a44;
+    --bg-secondary: #2e405e;
+    --text-primary: #ffffff;
+    --text-secondary: #d3d9e0;
+    --border-color: #4a6580;
+    --accent-color: #ffffff;
+    --hover-bg: #3a5070;
+    /* Tema Biru (Sesuai Gambar 1) */
+    --halftone-color: rgba(255, 255, 255, 0.1); 
+    --image-url: url('images/tema.2.jpg'); 
 }
 
-body.mono-active {
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 0.05em;
-}
-
-body.mono-active * {
-    font-family: 'Courier New', Courier, monospace !important;
+[data-theme="default"] {
+    /* Tema Monokrom (Sesuai Gambar 2) */
+    --halftone-color: rgba(255, 255, 255, 0.2); 
+    --image-url: url('images/tema.1.jpg'); 
 }
 
 * {
@@ -40,6 +43,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* MODIFIKASI BACKGROUND PENTING ADA DI SINI */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     background-color: var(--bg-primary);
@@ -47,12 +51,34 @@ body {
     line-height: 1.6;
     font-weight: 300;
     letter-spacing: 0.02em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    
+    /* LAPISAN BACKGROUND: Halftone di atas Gambar Abstrak */
+    background-image: 
+        /* Lapisan 1: Halftone Dots (radial-gradient) */
+        radial-gradient(circle at 50% 50%, var(--halftone-color) 1px, transparent 1px),
+        /* Lapisan 2: Gambar Abstrak (gelombang) */
+        var(--image-url);
+        
+    /* Pengaturan Ukuran dan Penempatan */
+    background-size: 
+        var(--halftone-size) var(--halftone-size), /* Ukuran untuk Halftone */
+        cover; /* Ukuran untuk Gambar */
+        
+    /* Menggabungkan Halftone dengan Gambar */
+    background-blend-mode: overlay, normal; 
+    
+    /* Agar gambar menempel dan mengisi seluruh viewport */
+    background-attachment: fixed;
+    background-position: center center;
+
+    transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
 }
+/* AKHIR MODIFIKASI BACKGROUND */
+
 
 /* ===========================
-   Glitch Effect
-   =========================== */
+    Glitch Effect
+    =========================== */
 .glitch-overlay {
     position: fixed;
     inset: 0;
@@ -78,85 +104,8 @@ body {
 }
 
 /* ===========================
-   Animated Background
-   =========================== */
-.animated-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-body.mono-active .animated-bg {
-    opacity: 1;
-}
-
-.bg-gradient {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1), transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 77, 77, 0.1), transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(77, 255, 255, 0.1), transparent 50%);
-    animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -30px) scale(1.1); }
-    66% { transform: translate(-30px, 30px) scale(0.9); }
-}
-
-.bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: gridMove 20s linear infinite;
-}
-
-[data-theme="light"] .bg-grid {
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-}
-
-@keyframes gridMove {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
-}
-
-.bg-particles {
-    position: absolute;
-    inset: 0;
-    background-image: 
-        radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px, 80px 80px;
-    background-position: 0 0, 40px 60px;
-    animation: particleFloat 25s ease-in-out infinite;
-}
-
-[data-theme="light"] .bg-particles {
-    background-image: 
-        radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-        radial-gradient(circle, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-}
-
-@keyframes particleFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-/* ===========================
-   Sidebar Navigation
-   =========================== */
+    Sidebar Navigation
+    =========================== */
 .sidebar {
     position: fixed;
     left: 0;
@@ -297,27 +246,9 @@ body.mono-active .animated-bg {
     transition: all 0.3s ease;
 }
 
-.mobile-theme-toggle .theme-label {
-    font-size: 0.55rem;
-}
-
-.mobile-theme-toggle {
-    padding: 0.5rem;
-}
-
-.mobile-theme-toggle .theme-checkbox {
-    width: 16px;
-    height: 16px;
-}
-
-.mobile-theme-toggle .theme-option.active .theme-checkbox::after {
-    width: 8px;
-    height: 8px;
-}
-
 /* ===========================
-   Mobile Header & Menu
-   =========================== */
+    Mobile Header & Menu
+    =========================== */
 .mobile-header {
     display: none;
     position: fixed;
@@ -334,10 +265,41 @@ body.mono-active .animated-bg {
     transition: all 0.3s ease;
 }
 
+.mobile-header .logo {
+    margin-bottom: 0;
+}
+
 .mobile-actions {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.mobile-theme-toggle {
+    flex-direction: row;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+.mobile-theme-toggle .theme-option {
+    flex-direction: row;
+    padding: 0.25rem;
+    gap: 0.25rem;
+}
+
+.mobile-theme-toggle .theme-checkbox {
+    width: 16px;
+    height: 16px;
+}
+
+.mobile-theme-toggle .theme-option.active .theme-checkbox::after {
+    width: 8px;
+    height: 8px;
+}
+
+.mobile-theme-toggle .theme-label {
+    writing-mode: horizontal-tb;
+    font-size: 0.65rem;
 }
 
 .hamburger {
@@ -413,8 +375,8 @@ body.mono-active .animated-bg {
 }
 
 /* ===========================
-   Main Content
-   =========================== */
+    Main Content
+    =========================== */
 .main-content {
     margin-left: 200px;
     transition: margin-left 0.3s ease;
@@ -423,8 +385,8 @@ body.mono-active .animated-bg {
 }
 
 /* ===========================
-   Hero Section
-   =========================== */
+    Hero Section
+    =========================== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -487,8 +449,8 @@ body.mono-active .animated-bg {
 }
 
 /* ===========================
-   Projects Section
-   =========================== */
+    Projects Section
+    =========================== */
 .projects {
     min-height: 100vh;
     padding: 6rem 2rem;
@@ -578,8 +540,8 @@ body.mono-active .animated-bg {
 }
 
 /* ===========================
-   About Section
-   =========================== */
+    About Section
+    =========================== */
 .about {
     min-height: 100vh;
     padding: 6rem 2rem;
@@ -659,8 +621,8 @@ body.mono-active .animated-bg {
 }
 
 /* ===========================
-   Contact Section
-   =========================== */
+    Contact Section
+    =========================== */
 .contact {
     min-height: 100vh;
     padding: 6rem 2rem;
@@ -712,8 +674,8 @@ body.mono-active .animated-bg {
 }
 
 /* ===========================
-   Project Modal
-   =========================== */
+    Project Modal
+    =========================== */
 .project-modal {
     position: fixed;
     inset: 0;
@@ -817,8 +779,8 @@ body.mono-active .animated-bg {
 }
 
 /* ===========================
-   Footer
-   =========================== */
+    Footer
+    =========================== */
 .footer {
     padding: 3rem 2rem;
     border-top: 1px solid var(--border-color);
@@ -829,8 +791,8 @@ body.mono-active .animated-bg {
 }
 
 /* ===========================
-   Responsive Design
-   =========================== */
+    Responsive Design
+    =========================== */
 @media (max-width: 1024px) {
     .about-content {
         grid-template-columns: 1fr;
@@ -839,6 +801,8 @@ body.mono-active .animated-bg {
     .about-image {
         max-width: 400px;
         margin: 0 auto;
+        position: relative;
+        top: 0;
     }
 }
 
@@ -856,11 +820,15 @@ body.mono-active .animated-bg {
         padding-top: 70px;
     }
 
-    .hero,
+    .hero {
+        min-height: calc(100vh - 70px);
+        padding: 3rem 1.5rem;
+    }
+
     .projects,
     .about,
     .contact {
-        padding: 3rem 1.5rem;
+        padding: 4rem 1.5rem;
     }
 
     .project-item {
@@ -923,5 +891,13 @@ body.mono-active .animated-bg {
     .project-meta {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .contact-link {
+        font-size: 1rem;
     }
 }
