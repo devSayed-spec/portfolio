@@ -47,8 +47,6 @@ const projectsData = {
         images: [],
         liveUrl: "https://devsayed-spec.github.io/CodingCamp-3Nov25-sayed/"
     }
-    
-
 };
 
 // ===========================
@@ -150,31 +148,44 @@ mobileNavLinks.forEach(link => {
 });
 
 // ===========================
-// Smooth Scrolling & Active Nav
+// Smooth Scrolling & Active Nav - FIXED
 // ===========================
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 const sections = document.querySelectorAll('section[id]');
 
 function setActiveNav() {
     const scrollY = window.pageYOffset;
+    let currentSection = '';
 
     sections.forEach(section => {
+        const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
+        
+        // Adjust offset for better accuracy (considering header height)
+        const offset = window.innerWidth <= 768 ? 100 : 150;
+        
+        if (scrollY >= (sectionTop - offset)) {
+            currentSection = section.getAttribute('id');
+        }
+    });
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
+    // Update all nav links
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === `#${currentSection}`) {
+            link.classList.add('active');
         }
     });
 }
 
+// Run on scroll
 window.addEventListener('scroll', setActiveNav);
+
+// Run on page load
+window.addEventListener('load', () => {
+    setActiveNav();
+});
 
 // ===========================
 // Project Modal
@@ -361,12 +372,18 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
 const fontSize = 14;
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1);
+let columns = Math.floor(canvas.width / fontSize);
+let drops = Array(columns).fill(1);
+
+// Update columns and drops on resize
+window.addEventListener('resize', () => {
+    columns = Math.floor(canvas.width / fontSize);
+    drops = Array(columns).fill(1);
+});
 
 function drawMatrix() {
     // Only draw if monospaced theme is active
-    if (body.getAttribute('data-theme') !== 'monospaced') {
+    if (!body.classList.contains('mono-active')) {
         return;
     }
 
