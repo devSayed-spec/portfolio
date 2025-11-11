@@ -56,7 +56,7 @@ const projectsData = {
         title: "CSS Grid Documentation",
         year: "2025",
         role: "Frontend Developer",
-        description: "Proyek Technical Documentation Page dari freeCodeCamp certification. Dokumentasi interaktif CSS Grid Layout dalam bahasa Indonesia dengan struktur semantik, navigasi fixed sidebar, syntax-highlighted code examples, dan implementasi mobile-first responsive design.",
+        description: "Proyek Build a Technical Documentation Page dari freeCodeCamp Responsive Web Design Certification. Dokumentasi lengkap CSS Grid dengan navigasi interaktif, contoh kode praktis, dan responsive design menggunakan media queries.",
         tags: ["HTML5", "CSS3", "CSS Grid", "Responsive Design", "Documentation"],
         images: ["images/css.png"],
         liveUrl: " https://devsayed-spec.github.io/Build-a-Technical-Documentation-Page/",
@@ -74,7 +74,7 @@ const body = document.body;
 
 const themeOptions = document.querySelectorAll('.theme-option');
 
-let currentColorTheme = 'dark';
+let currentColorTheme = 'wine';
 let monoEnabled = false;
 
 function updateThemeUI() {
@@ -126,7 +126,7 @@ themeOptions.forEach(option => {
     option.addEventListener('click', handleThemeClick);
 });
 
-const savedColorTheme = localStorage.getItem('colorTheme') || 'dark';
+const savedColorTheme = localStorage.getItem('colorTheme') || 'wine';
 const savedMonoEnabled = localStorage.getItem('monoEnabled') === 'true';
 
 currentColorTheme = savedColorTheme;

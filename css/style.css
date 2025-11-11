@@ -2,23 +2,23 @@
    CSS Variables & Reset
    =========================== */
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --text-primary: #ffffff;
-    --text-secondary: #888888;
-    --border-color: #1a1a1a;
-    --accent-color: #ffffff;
-    --hover-bg: #151515;
+    --bg-primary: #50242A;
+    --bg-secondary: #3d1e23;
+    --text-primary: #E2D6C9;
+    --text-secondary: #a89886;
+    --border-color: #6b2f35;
+    --accent-color: #E2D6C9;
+    --hover-bg: #5d2a30;
 }
 
 [data-theme="light"] {
-    --bg-primary: #e8e8e8;
-    --bg-secondary: #f5f5f5;
-    --text-primary: #000000;
-    --text-secondary: #666666;
-    --border-color: #d0d0d0;
-    --accent-color: #000000;
-    --hover-bg: #dedede;
+    --bg-primary: #3A2E29;
+    --bg-secondary: #2d2420;
+    --text-primary: #E2D6C9;
+    --text-secondary: #9b8d7f;
+    --border-color: #4a3d36;
+    --accent-color: #E2D6C9;
+    --hover-bg: #443730;
 }
 
 body.mono-active {
