@@ -51,6 +51,16 @@ const projectsData = {
         images: ["images/tech-vision.png    "],
         liveUrl: "https://devsayed-spec.github.io/CodingCamp-3Nov25-sayed/",
         githubUrl: "https://github.com/devSayed-spec/CodingCamp-3Nov25-sayed"
+    },
+    6: {
+        title: "CSS Grid Documentation",
+        year: "2025",
+        role: "Frontend Developer",
+        description: "Proyek Technical Documentation Page dari freeCodeCamp certification. Dokumentasi interaktif CSS Grid Layout dalam bahasa Indonesia dengan struktur semantik, navigasi fixed sidebar, syntax-highlighted code examples, dan implementasi mobile-first responsive design.",
+        tags: ["HTML5", "CSS3", "CSS Grid", "Responsive Design", "Documentation"],
+        images: ["images/css.png"],
+        liveUrl: " https://devsayed-spec.github.io/Build-a-Technical-Documentation-Page/",
+        githubUrl: "https://github.com/devSayed-spec/Build-a-Technical-Documentation-Page"
     }
 };
 
