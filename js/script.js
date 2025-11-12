@@ -1,6 +1,3 @@
-// ===========================
-// Project Data - UPDATED
-// ===========================
 const projectsData = {
     1: {
         title: "Formulir Pendaftaran Workshop Teknologi",
@@ -48,7 +45,7 @@ const projectsData = {
         role: "Frontend Web Development",
         description: "Website profil perusahaan interaktif dengan dua halaman (Beranda & Profil). Fitur meliputi sistem greeting dinamis untuk user, contact form dengan validasi (nama, format email, panjang pesan), responsive hamburger menu untuk perangkat mobile, gradient hero section, serta struktur konten yang menampilkan visi, misi, dan nilai perusahaan. Fully responsive untuk desktop, tablet, dan mobile.",
         tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Form Validation", "DOM Manipulation"],
-        images: ["images/tech-vision.png    "],
+        images: ["images/tech-vision.png"],
         liveUrl: "https://devsayed-spec.github.io/CodingCamp-3Nov25-sayed/",
         githubUrl: "https://github.com/devSayed-spec/CodingCamp-3Nov25-sayed"
     },
@@ -59,19 +56,15 @@ const projectsData = {
         description: "Proyek Build a Technical Documentation Page dari freeCodeCamp Responsive Web Design Certification. Dokumentasi lengkap CSS Grid dengan navigasi interaktif, contoh kode praktis, dan responsive design menggunakan media queries.",
         tags: ["HTML5", "CSS3", "CSS Grid", "Responsive Design", "Documentation"],
         images: ["images/css.png"],
-        liveUrl: " https://devsayed-spec.github.io/Build-a-Technical-Documentation-Page/",
+        liveUrl: "https://devsayed-spec.github.io/Build-a-Technical-Documentation-Page/",
         githubUrl: "https://github.com/devSayed-spec/Build-a-Technical-Documentation-Page"
     }
 };
 
-// ===========================
-// Theme Toggle
-// ===========================
 const themeToggle = document.getElementById('themeToggle');
 const mobileThemeToggle = document.getElementById('mobileThemeToggle');
 const glitchOverlay = document.getElementById('glitchOverlay');
 const body = document.body;
-
 const themeOptions = document.querySelectorAll('.theme-option');
 
 let currentColorTheme = 'wine';
@@ -133,9 +126,6 @@ currentColorTheme = savedColorTheme;
 monoEnabled = savedMonoEnabled;
 applyTheme();
 
-// ===========================
-// Mobile Menu
-// ===========================
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -152,9 +142,6 @@ mobileNavLinks.forEach(link => {
     });
 });
 
-// ===========================
-// Smooth Scrolling & Active Nav
-// ===========================
 const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 const sections = document.querySelectorAll('section[id]');
 
@@ -165,7 +152,6 @@ function setActiveNav() {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        
         const offset = window.innerWidth <= 768 ? 100 : 150;
         
         if (scrollY >= (sectionTop - offset)) {
@@ -183,14 +169,10 @@ function setActiveNav() {
 }
 
 window.addEventListener('scroll', setActiveNav);
-
 window.addEventListener('load', () => {
     setActiveNav();
 });
 
-// ===========================
-// Project Modal - UPDATED WITH GITHUB LINKS
-// ===========================
 const projectItems = document.querySelectorAll('.project-item');
 const projectModal = document.getElementById('projectModal');
 const modalClose = document.getElementById('modalClose');
@@ -222,7 +204,6 @@ function openProjectModal(projectId) {
     glitchOverlay.classList.add('active');
     
     setTimeout(() => {
-        // Build modal images
         let imagesHTML = '';
         if (project.images && project.images.length > 0) {
             imagesHTML = '<div class="modal-images">';
@@ -236,7 +217,6 @@ function openProjectModal(projectId) {
             imagesHTML += '</div>';
         }
 
-        // Build tags
         let tagsHTML = '';
         if (project.tags && project.tags.length > 0) {
             tagsHTML = '<div class="modal-tags">';
@@ -246,7 +226,6 @@ function openProjectModal(projectId) {
             tagsHTML += '</div>';
         }
 
-        // Build project links (Live Demo + GitHub)
         let linksHTML = '';
         if (project.liveUrl || project.githubUrl) {
             linksHTML = '<div class="modal-links" style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">';
@@ -291,7 +270,6 @@ function openProjectModal(projectId) {
 
         projectModal.classList.add('active');
         lockScroll();
-        
         glitchOverlay.classList.remove('active');
     }, 200);
 }
@@ -327,9 +305,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// ===========================
-// Hover Effects
-// ===========================
 projectItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
         item.style.transform = 'translateX(10px)';
@@ -340,9 +315,6 @@ projectItems.forEach(item => {
     });
 });
 
-// ===========================
-// Page Load Animations
-// ===========================
 window.addEventListener('load', () => {
     window.scrollTo(0, 0);
 });
